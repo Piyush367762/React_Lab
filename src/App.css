@@ -1,0 +1,126 @@
+/* App.css */
+
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #121212;
+  color: white;
+  font-family: sans-serif;
+}
+
+/* HEADER */
+.header {
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+
+.header-left span {
+  color: #888;
+  margin-right: 5px;
+}
+
+.header-left strong {
+  font-size: 1.1rem;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-prev {
+  background: #333;
+  color: white;
+}
+
+.btn-next {
+  background: #4facfe;
+  color: white;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* LESSON VIEW */
+.lesson-container {
+  height: 100%;
+  overflow-y: auto;
+  padding: 40px 20px;
+}
+
+.lesson-content {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.start-btn {
+  margin-top: 40px;
+  padding: 12px 24px;
+  background: #4facfe;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* LAB VIEW */
+.lab-container {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  width: 250px;
+  padding: 20px;
+  background: #181818;
+  border-right: 1px solid #333;
+  overflow-y: auto;
+}
+
+.sidebar h3 {
+  color: #4facfe;
+  margin-top: 0;
+}
+
+.sidebar p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.tip-box {
+  margin-top: 20px;
+  padding: 10px;
+  background: #222;
+  border-radius: 4px;
+  font-size: 12px;
+  border: 1px solid #444;
+}
+
+/* IDE */
+.ide-container {
+  flex: 1;
+}
+
+.editor-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
