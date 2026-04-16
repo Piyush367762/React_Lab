@@ -1,0 +1,11 @@
+/* Reset default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove body margin specifically */
+body {
+  margin: 0;
+}
