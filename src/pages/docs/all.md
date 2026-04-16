@@ -1,7 +1,7 @@
 React Core Documentation
 React is a declarative, component-based JavaScript library for building user interfaces. Below is a breakdown of its fundamental concepts.
 
-1. Components
+1. Components :
 What is it?
 Components are the building blocks of a React application. They are independent, reusable pieces of UI that function like JavaScript functions but return HTML via JSX.
 
@@ -16,7 +16,7 @@ function Welcome() {
 When to use it?
 Use them for any UI element that repeats (like a button) or to break down a complex page into manageable sections (like a Sidebar or Navbar).
 
-2. JSX (JavaScript XML)
+2. JSX (JavaScript XML) :
 What is it?
 JSX is a syntax extension for JavaScript that looks like HTML. It allows you to write UI structures directly inside your JavaScript logic.
 
@@ -29,7 +29,7 @@ const element = <div className="container">Welcome to JSX</div>;
 When to use it?
 Always. It is the standard way to define the UI layout in React components.
 
-3. Props
+3. Props :
 What is it?
 Short for "properties," props are read-only arguments passed into components, similar to how you pass arguments to a function.
 
@@ -45,7 +45,7 @@ function User(props) {
 When to use it?
 Use props whenever a component needs to display data or change behavior based on input from a parent component.
 
-4. State
+4. State :
 What is it?
 State is an object that holds information that may change over the lifetime of a component. Unlike props, state is managed inside the component.
 
@@ -59,7 +59,7 @@ const [count, setCount] = React.useState(0);
 When to use it?
 Use it for data that changes over time due to user interaction, API responses, or form inputs.
 
-5. Events
+5. Events :
 What is it?
 Events in React are the way you handle user interactions like clicks, mouse moves, or key presses. They are named using camelCase (e.g., onClick).
 
@@ -72,7 +72,7 @@ JavaScript
 When to use it?
 Use whenever you need to trigger a function based on a user's action.
 
-6. Conditional Rendering
+6. Conditional Rendering :
 What is it?
 The ability to render different UI elements depending on certain conditions (using if statements or ternary operators).
 
@@ -85,7 +85,7 @@ JavaScript
 When to use it?
 Use it for toggling visibility, handling loading states, or displaying error messages.
 
-7. Lists and Keys
+7. Lists and Keys :
 What is it?
 Lists allow you to render multiple similar components from an array. Keys are unique string attributes you must include when creating lists.
 
@@ -99,7 +99,7 @@ return items.map((item, index) => <li key={index}>{item}</li>);
 When to use it?
 Use lists when mapping over arrays of data. Always provide a unique key (ideally an ID from your data) to maintain UI stability.
 
-8. useEffect
+8. useEffect :
 What is it?
 A Hook that allows you to perform "side effects" in functional components.
 

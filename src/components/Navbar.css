@@ -1,5 +1,7 @@
 .navbar {
   display: flex;
+  margin-right: 50px;
+  margin-left: 30px;
   justify-content: space-between; /* pushes left & right apart */
   align-items: center;
   padding: 10px 20px;
@@ -7,6 +9,7 @@
   color: black;
   border-color: #eeeee4;
   border-width: 4px;
+  
 }
 
 .nav-links {

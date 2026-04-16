@@ -1,0 +1,131 @@
+.docs-container {
+background-color: #0f172a;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(147, 51, 234, 0.1) 0px, transparent 50%);
+  max-width: 8500px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  line-height: 1.8;
+  color: white;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* --- TITLES --- */
+.docs-container h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin-bottom: 40px;
+  text-align: center;
+  background: linear-gradient(to right, #60a5fa, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Concept Titles (1. Components, etc) */
+.docs-container h2 {
+  font-size: 1.8rem;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid #334155;
+  color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Subheaders (What is it?, Why it exists?) */
+.docs-container h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+/* --- THE "WHY" SECTION (Problem/Rationale) --- */
+/* Target h3 that contains "Why" and its next paragraph */
+.docs-container h3:contains("Why"),
+.docs-container h3 + p {
+  color: #94a3b8;
+}
+
+.docs-container h3:nth-of-type(2) {
+  color: #fbbf24; /* Amber color for the "Reasoning/Problem" */
+}
+
+.docs-container h3:nth-of-type(2) + p {
+  background: rgba(251, 191, 36, 0.05);
+  border-left: 3px solid #fbbf24;
+  padding: 12px 20px;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
+
+/* --- CODE BLOCKS --- */
+.docs-container pre {
+  background: #0f172a;
+  padding: 24px;
+  border-radius: 12px;
+  margin: 20px 0;
+  border: 1px solid #1e293b;
+  position: relative;
+}
+
+/* Label for code blocks */
+.docs-container pre::before {
+  content: "EXAMPLE";
+  position: absolute;
+  top: 0;
+  right: 20px;
+  transform: translateY(-50%);
+  background: #3b82f6;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.docs-container code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+}
+
+/* Inline code highlight */
+.docs-container :not(pre) > code {
+  background: #2d3748;
+  color: #38bdf8;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* --- "WHEN TO USE IT" SECTION --- */
+.docs-container h3:last-of-type {
+  color: #10b981; /* Green for "Best Practices" */
+}
+
+.docs-container h3:last-of-type + p {
+  font-weight: 500;
+  color: #e2e8f0;
+}
+
+/* --- LISTS --- */
+.docs-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.docs-container li {
+  padding-left: 25px;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.docs-container li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+}
