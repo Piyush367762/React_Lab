@@ -2,7 +2,7 @@ Project Overview
 react_lab is a structured environment designed to explore and implement core React
 concepts. This project serves as a practical repository for experiments involving
 component architecture, state management, hooks, and modern frontend deployment
-workflows.
+workflows alongwith documentation of React.
 
 Key Features
 Component Architecture: Modular UI design using functional components.
@@ -16,16 +16,6 @@ React: Modern UI library.
 JavaScript (ES6+): Core logic and functional programming.
 CSS3: Custom styling and layout.
 Vite/CRA: Build tool and development server.
-•
-•
-•
-•
-•
-
-•
-•
-•
-•
 
 Getting Started
 Prerequisites
@@ -33,7 +23,7 @@ Ensure you have Node.js installed on your system.
 Installation
 
 # Clone the repository
-git clone https://github.com/piyus/React_Lab.git
+git clone https://github.com/Piyush367762/React_Lab.git
 # Navigate to project directory
 cd React_Lab
 # Install dependencies
