@@ -1,11 +1,13 @@
-import {Links} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function Navbar(){
-    <nav>
-        <Links to="/">Home</Links>
-        <Links to="/practice">Practice</Links>
-        <Links to="/docs">Documentation</Links>
-        <Links to="/about">About Us</Links>
+    return (
+    <nav style={{ display: "flex", gap: "20px", padding: "10px" }}>
+        <Link to="/">Home</Link>
+        <Link to="/practice">Practice</Link>
+        <Link to="/docs">Documentation</Link>
+        <Link to="/about">About Us</Link>
     </nav>
+    );
 }
 export default Navbar;
