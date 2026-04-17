@@ -48,14 +48,29 @@ background-color: #0f172a;
 /* Target h3 that contains "Why" and its next paragraph */
 .docs-container h3:contains("Why"),
 .docs-container h3 + p {
-  color: #94a3b8;
+  background: rgba(251, 191, 36, 0.08); /* Amber */
+  border-left: 4px solid #fbbf24;
+  padding: 16px 20px;
+  border-radius: 0 12px 12px 0;
+  margin-bottom: 24px;
+  font-style: italic;
+  color: #e2e8f0;
 }
-
-.docs-container h3:nth-of-type(2) {
-  color: #fbbf24; /* Amber color for the "Reasoning/Problem" */
+.docs-container h3:last-of-type + p {
+  background: rgba(16, 185, 129, 0.08); /* Green */
+  border-left: 4px solid #10b981;
+  font-style: normal;
 }
-
-.docs-container h3:nth-of-type(2) + p {
+.docs-container h3:nth-of-type(even) {
+  color: #24fb64; /* Amber color for the "Reasoning/Problem" */
+}
+.docs-container h3:last-of-type {
+  color: #10b981; /* Green for 'When' */
+}
+.docs-container h3:nth-of-type(odd){
+    color:#38bdf8;
+}
+.docs-container h3:nth-of-type(even) + p {
   background: rgba(251, 191, 36, 0.05);
   border-left: 3px solid #fbbf24;
   padding: 12px 20px;
