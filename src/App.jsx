@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Practice from "./pages/Pratice.jsx";
 import Docs from "./pages/Docs";
 import Home from "./pages/Home";
+
 //import About from "./pages/About";
 
 function App() {
