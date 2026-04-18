@@ -14,6 +14,7 @@ JSX stands for JavaScript XML. It allows us to write HTML directly inside JavaSc
 2. **One Root Element:** A component can only return one single parent element. If you have siblings, wrap them in a \`<div>\` or a Fragment \`<>\` \`</>\`.
 3. **CamelCase Attributes:** Use \`className\` instead of \`class\`, and \`htmlFor\` instead of \`for\`.
     `,
+    img : "/duck.png"
   },
   {
     id: "jsx-lab",
@@ -35,7 +36,8 @@ A Component is just a JavaScript function that returns JSX. They are reusable, i
 React takes this Virtual DOM description, compares it to the actual browser page, and updates only the parts that changed. This makes it much faster than refreshing the whole page.
 
 **Rule:** Component names **MUST** start with a capital letter (e.g., \`Header\`, not \`header\`), otherwise React thinks it's a standard HTML tag.
-    `
+    `,
+    img : "/pic2.png"
   },
   {
     id: "comp-lab",
@@ -44,7 +46,7 @@ React takes this Virtual DOM description, compares it to the actual browser page
     description: "Task: We are trying to render a Navbar and a Footer inside the App, but nothing is showing up! Fix the component names and make sure they return JSX properly.",
     files: {
       "/App.js": `function navbar() {\n  return <nav>My Website Navigation</nav>;\n}\n\nfunction Footer() {\n  <p>Copyright 2026</p>; // Missing something here?\n}\n\nexport default function App() {\n  return (\n    <div>\n      <navbar />\n      <main><h1>Welcome!</h1></main>\n      <Footer />\n    </div>\n  );\n}`
-    },
+    }
   },
 
   // --- PHASE 2: DATA & LOGIC ---
@@ -57,7 +59,8 @@ React takes this Virtual DOM description, compares it to the actual browser page
 Props are like function arguments in JavaScript. They allow you to pass data from a parent component down to a child component. 
 
 This makes your components dynamic. Instead of hard-coding a name, you pass it as a prop so the component can be reused for different users! Props are **read-only**; a child cannot modify the props it receives.
-    `
+    `,
+    img : "/pic3.png"
   },
   {
     id: "props-lab",
@@ -66,6 +69,7 @@ This makes your components dynamic. Instead of hard-coding a name, you pass it a
     description: "Task: The 'ProfileCard' is expecting a 'username' and 'role' prop, but it's currently receiving the wrong data. Fix the App component to pass the correct props.",
     files: {
       "/App.js": `function ProfileCard(props) {\n  return (\n    <div className="card">\n      <h3>User: {props.username}</h3>\n      <p>Role: {props.role}</p>\n    </div>\n  );\n}\n\nexport default function App() {\n  return (\n    <div>\n      {/* Fix the props being passed here */}\n      <ProfileCard name="Alice" job="Admin" />\n    </div>\n  );\n}`
+      
     },
   },
   {
@@ -79,7 +83,7 @@ In React, you can conditionally render UI using standard JavaScript logic.
 Because we write JS inside JSX using curly braces \`{}\`, we can use tools like:
 * **Ternary Operator:** \`condition ? <TrueUI /> : <FalseUI />\`
 * **Logical AND:** \`condition && <TrueUI />\` (Renders nothing if false)
-    `
+    `,img : "/pic4.png"
   },
   {
     id: "cond-lab",
@@ -88,7 +92,7 @@ Because we write JS inside JSX using curly braces \`{}\`, we can use tools like:
     description: "Task: If 'isLoggedIn' is true, show the 'Welcome Back' message. If false, show the 'Please Login' button. The current ternary operator is broken.",
     files: {
       "/App.js": `export default function App() {\n  const isLoggedIn = false;\n\n  return (\n    <div>\n      {/* Fix the syntax of this ternary operator */}\n      {isLoggedIn ? \n        <h1>Welcome Back!</h1> ;\n        <button>Please Login</button>\n      }\n    </div>\n  );\n}`
-    },
+    }
   },
 
   // --- PHASE 3: INTERACTIVITY ---
@@ -103,7 +107,7 @@ React can perform actions based on user events, just like standard HTML (\`onCli
 **The Golden Rule:** You must pass a *function* to the event handler, not call the function immediately. 
 * ✅ Correct: \`onClick={handleClick}\`
 * ❌ Incorrect: \`onClick={handleClick()}\` (This runs the moment the page loads!)
-    `
+    `,img : "/pic5.png"
   },
   {
     id: "events-lab",
@@ -112,7 +116,7 @@ React can perform actions based on user events, just like standard HTML (\`onCli
     description: "Task: The alert is firing as soon as the page loads, and clicking the button does nothing! Fix the onClick handler.",
     files: {
       "/App.js": `export default function App() {\n  function shout() {\n    alert("You clicked me!");\n  }\n\n  return (\n    <button onClick={shout()}>\n      Click Me\n    </button>\n  );\n}`
-    },
+    }
   },
   {
     id: "state-lesson",
@@ -127,7 +131,7 @@ We use the \`useState\` Hook. It gives us two things:
 2. A function to update that value.
 
 **Crucial:** NEVER modify state directly (e.g., \`count = count + 1\`). Always use the setter function (\`setCount(count + 1)\`), otherwise React won't know it needs to update the screen!
-    `
+    `,img : "/pic6.png"
   },
   {
     id: "state-lab",
@@ -149,7 +153,7 @@ We use the \`useState\` Hook. It gives us two things:
 To turn an array of data into an array of UI elements, we use the JavaScript \`.map()\` array method.
 
 **The Key Prop:** Every item rendered inside a list must have a unique \`key\` prop (like an ID). React uses this to keep track of which items were added, changed, or removed.
-    `
+    `,img : "/pic7.png"
   },
   {
     id: "lists-lab",
