@@ -163,109 +163,33 @@ To turn an array of data into an array of UI elements, we use the JavaScript \`.
     files: {
       "/App.js": `export default function App() {\n  const groceries = [\n    { id: 1, name: "Apples" },\n    { id: 2, name: "Bananas" },\n    { id: 3, name: "Bread" }\n  ];\n\n  return (\n    <ul>\n      {/* Write your map function here */}\n    </ul>\n  );\n}`
     },
-  }
-];
-// export const CURRICULUM = [
-//   {
-//     id: 1,
-//     title: "JSX Basics",
-//     type: "lesson", // Mode: Reading
-//     content: `
-// # Welcome to JSX
-// JSX stands for JavaScript XML. It allows us to write HTML inside JavaScript.
-// ### Key Rules:
-// * Every tag must be closed.
-// * You must return a single parent element.
-// * Use **className** instead of **class**.
-//     `,
-//   },
-//   {
-//     id: 2,
-//     title: "JSX Lab",
-//     type: "lab", // Mode: Coding
-//     description: "Task: Change the <h1> text to 'Hello ReactLab' and add a <u> tag below it.",
-//     initialCode: `export default function App() {\n  return <h1>Change Me</h1>\n}`,
-//   },
-//   {
-//     id: 3,
-//     title: "Components",
-//     type: "lesson",
-//     content: "Components is just function in react They are reusable, independent pieces of UI.React takes this Virtual DOM description, compares it to the actual browser page, and updates only the parts that changed. This makes it much faster than refreshing the whole page"
-//   },
-//   {
-//     id: 4,
-//     title: "Components Lab",
-//     type: "lab",
-//     description: "Create a Header component and nest it inside App.js",
-//     initialCode: "function Navbar(){return ()} export default Navbar;",
-//   },
-//   {
-//     id: 5,
-//     title: "Props",
-//     type: "lesson",
-//     content: "Props are like function argumnet in Javascript. Passing Data to Components. It is use to render real time data from user on the website"
-//   },
-//   {
-//     id: 6,
-//     title: "Contitonal Rendering",
-//     type: "lesson",
-//     content: "In React, you can conditionally render components like in if statement to render one function or any other"
-//   },
-//   {
-//     id: 7,
-//     title: "Events",
-//     type: "lesson",
-//     content: "React can perform actions based on user events."
-//   },
-//   {
-//     id: 8,
-//     title: "List, Form, Text area, Multiple Inputs"
-
-//   },
-//   {
-//     id: 9,
-//     title: "Portals and Suspence",
-
-//   },
-//   {
-//     id: 10,
-//     title: "CSS Styling"
-//   },
-//   {
-//     id: 11,
-//     title: "Router",
-
-//   },
-//   {
-//     id: 12,
-//     title: "Hook",
-
-//   },
-//   {
-//     id: 13,
-//     title: ""
-//   }
-// ];
-const CHALLENGES = {
-  counter: {
-    "/App.js": `import React, { useState } from "react";
+  },
+  {
+  id: "project",
+  title: "multiple file system",
+  type: "lab",
+  description: "understand that",
+  files: {
+  "/App.js": `import Header from "/Header.js";
+import Footer from "/Footer.js";
+import "/styles.css";
 
 export default function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <h1>Counter: {count}</h1>
-      <button onClick={() => setCount(c => c + 1)}>Increment</button>
+    <div>
+      <Header />
+      <h1>Hello World</h1>
+      <Footer />
     </div>
   );
-}`
-  },
-  todo: {
-    "/App.js": `import React from "react";
-
-export default function Todo() { 
-  return <h1>Todo Challenge - Start typing here!</h1> 
-}`
+}`,
+  "/Header.js": `export default function Header() {
+    return <header>My Header</header>;
+  }`,
+  "/Footer.js": `export default function Footer() {
+    return <footer>My Footer</footer>;
+  }`,
+  "/styles.css": `body { font-family: sans-serif; }`
+}
   }
-};
+];

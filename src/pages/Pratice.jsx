@@ -6,7 +6,8 @@ import {
   SandpackProvider, 
   SandpackLayout, 
   SandpackPreview, 
-  FileTabs 
+  FileTabs,
+  SandpackFileExplorer
 } from "@codesandbox/sandpack-react";
 import { MonacoEditor } from "../components/Editor";
 import { CURRICULUM } from '../challenges/lesson';
@@ -88,16 +89,21 @@ return (
               options={{ activeFile: "/App.js" }}
             >
               <SandpackLayout style={{ height: '100%', border: 'none' }}>
+                    <div style={{ width: '200px', borderRight: '1px solid #333' }}>
+                      <SandpackFileExplorer />
+                    </div>
                 <div className="editor-wrapper">
                   <FileTabs />
                   <MonacoEditor />
                 </div>
 
-                <SandpackPreview
+                <div className="preview-wrapper">
+                  <SandpackPreview
                   style={{ flex: 1 }}
                   showNavigator={true}
                   showConsoleButton={true}
                 />
+                </div>
               </SandpackLayout>
             </SandpackProvider>
           </div>
