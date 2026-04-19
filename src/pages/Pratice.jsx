@@ -88,8 +88,8 @@ return (
               files={currentStep.files}
               options={{ activeFile: "/App.js" }}
             >
-              <SandpackLayout style={{ height: '100%', border: 'none' }}>
-                    <div style={{ width: '200px', borderRight: '1px solid #333' }}>
+              <SandpackLayout className='layout'>
+                    <div>
                       <SandpackFileExplorer />
                     </div>
                 <div className="editor-wrapper">
