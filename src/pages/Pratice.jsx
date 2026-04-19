@@ -60,7 +60,7 @@ return (
         <div className="lesson-container">
           <div className="lesson-content">
             <ReactMarkdown>{currentStep.content}</ReactMarkdown>
-            {(<img src={currentStep.img} className="duck" alt="duck" />)}
+            
             <button onClick={handleNext} className="start-btn">
               Start Lab Exercise
             </button>
