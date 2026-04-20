@@ -191,5 +191,164 @@ export default function App() {
   }`,
   "/styles.css": `body { font-family: sans-serif; }`
 }
+  },
+  {
+      id: "project",
+  title: "todo",
+  type: "lab",
+  description: "dependency resolution correction",
+  files:{
+     "/App.js" : `import TodoApp from "./pages/TodoApp";
+    
+<Route path="/practice/todo" element={<TodoApp />} />`,
+    "src/pages/Todo.jsx" : `import { useState, useEffect } from "react";
+import "./Todo.css";
+
+export default function TodoApp() {
+  const [todos, setTodos] = useState([]);
+  const [input, setInput] = useState("");
+  const [editId, setEditId] = useState(null);
+
+  // Load from localStorage
+  useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem("todos"));
+    if (saved) setTodos(saved);
+  }, []);
+
+  // Save to localStorage
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
+  // CREATE + UPDATE
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!input.trim()) return;
+
+    if (editId) {
+      // UPDATE
+      setTodos(todos.map(todo =>
+        todo.id === editId ? { ...todo, text: input } : todo
+      ));
+      setEditId(null);
+    } else {
+      // CREATE
+      const newTodo = {
+        id: Date.now(),
+        text: input,
+      };
+      setTodos([...todos, newTodo]);
+    }
+
+    setInput("");
+  }
+
+  // DELETE
+  function handleDelete(id) {
+    setTodos(todos.filter(todo => todo.id !== id));
+  }
+
+  // EDIT
+  function handleEdit(todo) {
+    setInput(todo.text);
+    setEditId(todo.id);
+  }
+
+  return (
+    <div className="todo-container">
+      <h1>📝 Todo Lab</h1>
+
+      <form onSubmit={handleSubmit} className="todo-form">
+        <input
+          type="text"
+          placeholder="Enter task..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button type="submit">
+          {editId ? "Update" : "Add"}
+        </button>
+      </form>
+
+      <ul className="todo-list">
+        {todos.map(todo => (
+          <li key={todo.id}>
+            <span>{todo.text}</span>
+
+            <div className="actions">
+              <button onClick={() => handleEdit(todo)}>Edit</button>
+              <button onClick={() => handleDelete(todo.id)}>Delete</button>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}`,"src/pages/Todo.css" : `.todo-container {
+  max-width: 500px;
+  margin: 50px auto;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  color: #e2e8f0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-form input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+.todo-form button {
+  padding: 10px 15px;
+  background: #3b82f6;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  background: #020617;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.actions button {
+  margin-left: 5px;
+  background: #334155;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background: #475569;
+}
+  `
+  
+  }
   }
 ];

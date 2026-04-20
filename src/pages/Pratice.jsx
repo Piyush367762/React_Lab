@@ -86,7 +86,7 @@ return (
               template="react"
               theme="dark"
               files={currentStep.files}
-              options={{ activeFile: "/App.js" }}
+              options={{ activeFile: "./App.jsx" }}
             >
               <SandpackLayout className='layout'>
                     <div>
