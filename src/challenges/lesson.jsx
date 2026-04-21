@@ -235,7 +235,7 @@ export default function TodoApp() {
     } else {
       // CREATE
       const newTodo = {
-        id: Date.now(),
+        id: Date.now(),//stored timestamp also different id produce
         text: input,
       };
       setTodos([...todos, newTodo]);

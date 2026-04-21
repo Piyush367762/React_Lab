@@ -3,8 +3,7 @@ import Navbar from "./components/Navbar";
 import Practice from "./pages/Pratice.jsx";
 import Docs from "./pages/Docs";
 import Home from "./pages/Home";
-
-//import About from "./pages/About";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -14,7 +13,7 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/practice" element={<Practice />} />
         <Route path="/docs" element={<Docs />} />
-        {/*<Route path="/about" element={<About />} /> */}
+        {<Route path="/about" element={<About />} />}
       </Routes>
     </>
   );
