@@ -5,8 +5,10 @@ function Home() {
   return (
     <div className="home">
       <section className="hero">
+        <div className="hero-inner">
         <h1>React Lab</h1>
         <p>Learn React by practicing, not just reading.</p>
+        </div>
 
         <div className="buttons">
           <Link to="/practice" className="btn primary">

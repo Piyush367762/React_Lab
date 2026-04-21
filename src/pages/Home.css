@@ -1,22 +1,40 @@
-/* Container & Base Styles */
+/* Base Reset */
+body {
+  margin: 0;
+  padding: 0;
+  background: #0f172a;
+}
+
 .home {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
   color: #f1f5f9;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  max-width: 12000px;
-  margin: 0 auto;
   line-height: 1.6;
 }
 
 /* HERO SECTION */
 .hero {
+  /* full screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
-  padding: 100px 20px;
+  padding: 0 20px;
+
   background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
   border-bottom: 1px solid #334155;
 }
 
+.hero-inner {
+  max-width: 800px;
+}
+
 .hero h1 {
-  font-size: clamp(2.5rem, 8vw, 4rem); /* Responsive font size */
+  font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 800;
   margin-bottom: 15px;
   background: linear-gradient(90deg, #60a5fa, #a855f7);
@@ -36,6 +54,7 @@
   display: flex;
   justify-content: center;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -49,13 +68,13 @@
 .primary {
   background: #3b82f6;
   color: white;
-  box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
 }
 
 .primary:hover {
   background: #2563eb;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px 0 rgba(59, 130, 246, 0.4);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
 }
 
 .secondary {
@@ -72,18 +91,19 @@
 /* FEATURES SECTION */
 .features {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 30px;
   padding: 80px 20px;
   flex-wrap: wrap;
 }
 
 .card {
+  flex: 1 1 280px;
+  max-width: 350px;
   background: #1e293b;
   padding: 32px;
   border-radius: 16px;
-  width: 300px;
-  text-align: left; /* Changed to left for better readability */
+  text-align: left;
   border: 1px solid #334155;
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
@@ -109,12 +129,12 @@
   .hero {
     padding: 60px 20px;
   }
-  
+
   .buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .btn {
     width: 100%;
     max-width: 280px;
