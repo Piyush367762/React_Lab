@@ -257,7 +257,7 @@ export default function TodoApp() {
 
   return (
     <div className="todo-container">
-      <h1>📝 Todo Lab</h1>
+      <h1>Todo Lab</h1>
 
       <form onSubmit={handleSubmit} className="todo-form">
         <input
