@@ -8,6 +8,38 @@
   color:#e2e8f0;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+/* Add hover effects for buttons */
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Make navigation buttons more playful */
+.btn-prev {
+  background: linear-gradient(135deg, #333, #555);
+}
+.btn-next {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Lesson content readability */
+.lesson-content {
+  max-width: 800px;
+  margin: auto; /* center content */
+  padding: 20px;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* Start button playful animation */
+.start-btn:hover {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
 
 /* HEADER */
 .header {
@@ -55,6 +87,62 @@
   flex: 1;
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-buttons {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .lesson-content {
+    margin: 0;
+    padding: 15px;
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* Sidebar collapsible feel */
+  .sidebar {
+    max-height: 200px;
+    overflow-y: scroll;
+  }
+}
+/* Progress bar for lessons */
+.progress-bar {
+  height: 6px;
+  background: #333;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+.progress-bar-fill {
+  height: 100%;
+  width: 40%; /* dynamic based on progress */
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  transition: width 0.3s ease;
+}
+
+/* Tip box playful highlight */
+.tip-box {
+  background: #222;
+  border: 1px solid #4facfe;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(79,172,254,0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(79,172,254,0); }
+  100% { box-shadow: 0 0 0 0 rgba(79,172,254,0); }
+}
 
 /* LESSON VIEW */
 .lesson-container {
@@ -82,6 +170,62 @@
 }
 
 /* LAB VIEW */
+/* LAB VIEW */
+.lab-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+/* IDE */
+.ide-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row; /* side by side on desktop */
+  gap: 10px;
+}
+
+.editor-wrapper,
+.preview-wrapper {
+  flex: 1;
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .lab-container {
+    flex-direction: column; /* stack sidebar + IDE */
+  }
+
+  .sidebar {
+    width: 100%; /* full width on mobile */
+    border-right: none;
+    border-bottom: 1px solid #333;
+  }
+
+  .ide-container {
+    flex-direction: column; /* stack editor + preview */
+  }
+
+  .editor-wrapper,
+  .preview-wrapper {
+    height: auto; /* let content define height */
+  }
+
+  .btn {
+    padding: 10px;
+    font-size: 0.9rem; /* smaller buttons */
+  }
+
+  .lesson-content {
+    margin-left: 0; /* remove large left margin */
+    padding: 10px;
+  }
+}
+
 .lab-container {
   display: flex;
   height: 100%;
