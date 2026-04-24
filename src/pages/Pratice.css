@@ -87,35 +87,7 @@
   flex: 1;
   overflow: hidden;
 }
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
 
-  .nav-buttons {
-    width: 100%;
-    justify-content: space-around;
-  }
-
-  .lesson-content {
-    margin: 0;
-    padding: 15px;
-    font-size: 0.95rem;
-  }
-
-  .btn {
-    flex: 1;
-    text-align: center;
-  }
-
-  /* Sidebar collapsible feel */
-  .sidebar {
-    max-height: 200px;
-    overflow-y: scroll;
-  }
-}
 /* Progress bar for lessons */
 .progress-bar {
   height: 6px;
@@ -170,7 +142,7 @@
 }
 
 /* LAB VIEW */
-/* LAB VIEW */
+
 .lab-container {
   display: flex;
   height: 100%;
@@ -185,17 +157,8 @@
   gap: 10px;
 }
 
-.editor-wrapper,
-.preview-wrapper {
-  flex: 1;
-  background: #0f172a;
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-}
-
 /* Responsive for mobile */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .lab-container {
     flex-direction: column; /* stack sidebar + IDE */
   }
@@ -282,11 +245,4 @@
   height: 100vh;
  
   flex-direction:column;
-}
-.duck{
-  position: absolute;
-  bottom: 0px;
-  right: 30px;
-  height: 300px;
-  width: 300px;
 }
