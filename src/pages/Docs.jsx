@@ -1,5 +1,5 @@
 import ReactMarkdown from "react-markdown";
-import Docs from "./docs/all.md?raw";
+import Docs from "./docs/react.md?raw";
 import "./Docs.css"
 const sections = Docs.split('---');
 export default function DocsPage(){
