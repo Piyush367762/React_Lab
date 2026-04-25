@@ -67,11 +67,22 @@ while (count < 3) {
 
 Why we need Asynchronous Programming
 JavaScript is single-threaded, meaning it executes one thing at a time. Without asynchronous programming, tasks like fetching data from a server would block everything else. Asynchronous programming allows JS to handle long-running tasks without freezing the UI.
+(User input or Serive output)
+Reading/Writing files(I/O operation)
+Animation or transitions finshing(timers)
+
 
 Asynchronous Programming 
 Callbacks : function passed into other functions to run later.So in other words I can say that in js when function passed into other function we unlock a new feature of js in which one function wait event occur or input give and rest of the program will run as usual
 
 Promises : Objects representing a value that may be available now, later or never.
+Pending  
+Fulfilled
+Rejected
+
+.then()
+.catch()
+.finally() {less usage}
 
 Async/Await : Just modern syntax that makes asynchronous code look synchronous.
 
@@ -84,10 +95,33 @@ setTimeout(() => {
 
 
 // Using a Promise
+//manually create promise object
+//(State)
+//(Result)
+
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+wait(2000).then(() => console.log("2 seconds passed"));
+
+
 fetch("https://api.example.com/data")
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
+//fetch return promise object
+  .then(response => response.json())//.then(onFulfilled,onRejected)
+  .then(data => console.log(data))//.catch(onRejected)
+  .catch(error => console.error(error));//.finally(onFinally)
+
+Static Method of Promise
+Promise.resolve(value)//create a promise which is already resolve
+Promise.reject(reason)//which is already rejected
+Promise.all(iterable)//runs multiple promises in parallel resolve if all succeed other reject
+Promise.race(iterable)//resolve or reject on the basis of first promise
+Promise.allSettled(iterable)//Waits for all promises to finish, regardless of success or failure
+Promise.any(iterable)//Resolves as soon as the first promise succeeds. Ignores rejections unless all fail.
+//Static methods → belong to Promise class itself, used to create/coordinate promises.
+
+//Public methods → belong to individual promise objects, used to handle results.
 
 // Using async/await
 async function getData() {
