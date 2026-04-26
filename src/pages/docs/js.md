@@ -124,6 +124,9 @@ Promise.any(iterable)//Resolves as soon as the first promise succeeds. Ignores r
 //Public methods → belong to individual promise objects, used to handle results.
 
 // Using async/await
+//async always return promise
+//await pauses execution inside that function until the Promise resolves or rejects
+//we wrap up await in try and catch for error handling
 async function getData() {
   try {
     const response = await fetch("https://api.example.com/data");
