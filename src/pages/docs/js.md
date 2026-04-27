@@ -175,6 +175,60 @@ btn.addEventListener("click", () => {
 
 DOM manipulation is used for:
 
+1) Content Manipulation
+innerHTML
+textContent
+classList
+
+2) Attribute Manipulation
+getAttribute(name)
+setAttribute(name,value)
+removeAttribute(name)
+hasAttribute(name)
+
+3) Class Manipulation
+className: Get or set all classes as string
+classList.add("class")
+classList.remove("class") 
+classList.toggle("class")
+classList.contains("class")
+
+4) Style Manipulation
+style.propertyName
+getComputedStyle(element)
+
+5) Element Access & Structure
+id tagName nodeName
+children firstChild lastChild parentNode
+appendChild(node)
+
+
+const parent = document.getElementById("container");//getElementbyId give div which is named as container
+const newPara = document.createElement("p");//createElement create new element of para attribute
+newPara.textContent = "Second paragraph";//add content in the <p> tag
+after this it look like <p>Second paragraph</p>
+parent.appendChild(newPara);
+
+const parent = document.getElementById("container");
+const newPara1=document.createElement("p");
+newPara1.textcontent="First paragraph";
+
+parent.appendChild(newPara1);
+
+
+
+
+removeChild(node)
+replaceChild(newNode,oldNode)
+
+6) Event Attributes
+onclick, onchange, onmouseover
+addEventListener(event,handler)
+
+
+
+
+
 Updating UI dynamically
 
 Handling user interactions
