@@ -7,14 +7,24 @@ export const CURRICULUM = [
     type: "lesson",
     content: `
 # Welcome to JSX
-JSX stands for JavaScript XML. It allows us to write HTML directly inside JavaScript, making it easier to build user interfaces.
-
+JSX stands for JavaScript XML. It allows us to write HTML directly inside JavaScript, making it easier to build user interfaces and it is resusable.
+ 
 ### Key Rules to Remember:
-1. **Close Every Tag:** Even empty tags like \`<img>\` or \`<br>\` must be closed like \`<img />\`.
-2. **One Root Element:** A component can only return one single parent element. If you have siblings, wrap them in a \`<div>\` or a Fragment \`<>\` \`</>\`.
-3. **CamelCase Attributes:** Use \`className\` instead of \`class\`, and \`htmlFor\` instead of \`for\`.
-    `,
-    img : "/duck.png"
+
+1. **One Root Element:** A component can only return one single parent element. If you have siblings, wrap them in a \`<div>\` or a Fragment \`<>\` \`</>\`.
+2. **CamelCase Attributes:** Use \`className\` instead of \`class\`, and \`htmlFor\` instead of \`for\`.
+3. **Close Every Tag:** Even empty tags like \`<img>\` or \`<br>\` must be closed like \`<img />\`.
+4. **Export when a file have multiple helper function** and Export default when you have single function
+   while importing if used export default then you renamed it like \n
+  export default function MyComponent() {\n
+  return <h1>Hello</h1>;\n
+  }\n
+   import Anything from "./MyComponent";\n
+   but it you have used only export then you have to used the same function named you give to the file in the curly bracket\n
+   export function Header() \n
+   import { Header } from "./Header":
+`
+   
   },
   {
     id: "jsx-lab",
@@ -31,13 +41,13 @@ JSX stands for JavaScript XML. It allows us to write HTML directly inside JavaSc
     type: "lesson",
     content: `
 # Components
-A Component is just a JavaScript function that returns JSX. They are reusable, independent pieces of UI (like LEGO bricks).
+A Component is just a JavaScript function that returns JSX. They are reusable, independent pieces of UI.
 
 React takes this Virtual DOM description, compares it to the actual browser page, and updates only the parts that changed. This makes it much faster than refreshing the whole page.
 
 **Rule:** Component names **MUST** start with a capital letter (e.g., \`Header\`, not \`header\`), otherwise React thinks it's a standard HTML tag.
     `,
-    img : "/pic2.png"
+   
   },
   {
     id: "comp-lab",

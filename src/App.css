@@ -56,19 +56,16 @@
   overflow: hidden;
 }
 
-/* LESSON VIEW */
 .lesson-container {
   height: 100%;
   overflow-y: auto;
   padding: 40px 20px;
 }
-
 .lesson-content {
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
 }
-
 .start-btn {
   margin-top: 40px;
   padding: 12px 24px;
@@ -80,7 +77,6 @@
   cursor: pointer;
 }
 
-/* LAB VIEW */
 .lab-container {
   display: flex;
   height: 100%;
