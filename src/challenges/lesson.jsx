@@ -46,7 +46,7 @@ A Component is just a JavaScript function that returns JSX. They are reusable, i
 React takes this Virtual DOM description, compares it to the actual browser page, and updates only the parts that changed. This makes it much faster than refreshing the whole page.
 
 **Rule:** Component names **MUST** start with a capital letter (e.g., \`Header\`, not \`header\`), otherwise React thinks it's a standard HTML tag.
-    `,
+    Classical way to use is using arrow function ()=>{} in arrow function there is instrtic return implied thus easy to use`,
    
   },
   {
@@ -55,7 +55,8 @@ React takes this Virtual DOM description, compares it to the actual browser page
     type: "lab",
     description: "Task: We are trying to render a Navbar and a Footer inside the App, but nothing is showing up! Fix the component names and make sure they return JSX properly.",
     files: {
-      "/App.js": `function navbar() {\n  return <nav>My Website Navigation</nav>;\n}\n\nfunction Footer() {\n  <p>Copyright 2026</p>; // Missing something here?\n}\n\nexport default function App() {\n  return (\n    <div>\n      <navbar />\n      <main><h1>Welcome!</h1></main>\n      <Footer />\n    </div>\n  );\n}`
+      "/App.js": `function navbar() {\n  return <nav>My Website Navigation</nav>;\n}\nconst Header = () => <p>header</p>;
+\nfunction Footer() {\n  <p>Copyright 2026</p>; // Missing something here?\n}\n\nexport default function App() {\n  return (\n    <div>\n      <navbar />\n   <Header/>   <main><h1>Welcome! </h1></main>\n      <Footer />\n    </div>\n  );\n}`
     }
   },
 
