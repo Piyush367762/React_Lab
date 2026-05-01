@@ -19,7 +19,17 @@ function Home() {
           </Link>
         </div>
       </section>
-
+      <div className="lower">
+        <h2>Welcome to React learning and debugging</h2>
+          <p>Master React step by step with theory + practice.</p>
+  
+          <div className="cards">
+            <div className="card">Props Basics</div>
+            <div className="card">State Management</div>
+            <div className="card">Hooks</div>
+            <div className="card">Debugging</div>
+          </div>
+      </div>
 
     </div>
   );
