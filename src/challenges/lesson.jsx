@@ -70,8 +70,8 @@ React takes this Virtual DOM description, compares it to the actual browser page
 Props are like function arguments in JavaScript. They allow you to pass data from a parent component down to a child component. 
 
 This makes your components dynamic. Instead of hard-coding a name, you pass it as a prop so the component can be reused for different users! Props are **read-only**; a child cannot modify the props it receives.
+Data can come from: \nHardcoded values\n Arrays/Objects \n Parent component state \n External source(API call)
     `,
-    img : "/pic3.png"
   },
   {
     id: "props-lab",
@@ -79,7 +79,42 @@ This makes your components dynamic. Instead of hard-coding a name, you pass it a
     type: "lab",
     description: "Task: The 'ProfileCard' is expecting a 'username' and 'role' prop, but it's currently receiving the wrong data. Fix the App component to pass the correct props.",
     files: {
-      "/App.js": `function ProfileCard(props) {\n  return (\n    <div className="card">\n      <h3>User: {props.username}</h3>\n      <p>Role: {props.role}</p>\n    </div>\n  );\n}\n\nexport default function App() {\n  return (\n    <div>\n      {/* Fix the props being passed here */}\n      <ProfileCard name="Alice" job="Admin" />\n    </div>\n  );\n}`
+      "/App.js": `
+      //array is created like (key,value) pair 
+      const users = [
+  { username: "Alice", country: "USA", source: "Web", income: 5000, role: "Admin" },
+  { username: "Bob", country: "India", source: "Mobile", income: 3000, role: "User" },
+  { username: "Charlie", country: "UK", source: "Tablet", income: 4000, role: "Moderator" }
+];
+//as there is add username and country similarly add source income and role
+// also add style.css div border 
+function ProfileCard({ username, country }) {
+  return (
+    <div className="card">
+      <h3>User: {username}</h3>
+      <h4>Country: {country}</h4>
+     
+    </div>
+  );
+}
+
+<ProfileCard username="Alice" country="USA">
+  <p>Extra info: Loves coding!</p>
+</ProfileCard>
+
+    /*<ProfileCard {...user} /> uses the spread operator \n ...user spreads all properties of the object as props.*/
+    /*it is equivalent to <ProfileCard \n username={user.username} \n country={user.country} \n */
+export default function App() {
+  return (
+    <div>
+      //in map we pass object(array) and index (0,1,2,...)
+      {users.map((user, index) => (
+        <ProfileCard key={index} {...user} />
+      ))}
+    </div>
+  );
+}
+`
       
     },
   },
