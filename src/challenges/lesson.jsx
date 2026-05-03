@@ -129,7 +129,7 @@ In React, you can conditionally render UI using standard JavaScript logic.
 Because we write JS inside JSX using curly braces \`{}\`, we can use tools like:
 * **Ternary Operator:** \`condition ? <TrueUI /> : <FalseUI />\`
 * **Logical AND:** \`condition && <TrueUI />\` (Renders nothing if false)
-    `,img : "/pic4.png"
+    `
   },
   {
     id: "cond-lab",
@@ -151,8 +151,8 @@ Because we write JS inside JSX using curly braces \`{}\`, we can use tools like:
 React can perform actions based on user events, just like standard HTML (\`onClick\`, \`onChange\`, \`onSubmit\`).
 
 **The Golden Rule:** You must pass a *function* to the event handler, not call the function immediately. 
-* ✅ Correct: \`onClick={handleClick}\`
-* ❌ Incorrect: \`onClick={handleClick()}\` (This runs the moment the page loads!)
+*  Correct: \`onClick={handleClick}\`
+* Incorrect: \`onClick={handleClick()}\` (This runs the moment the page loads!)
     `,img : "/pic5.png"
   },
   {
@@ -170,14 +170,23 @@ React can perform actions based on user events, just like standard HTML (\`onCli
     type: "lesson",
     content: `
 # Introducing State
+HOOKS 
+Special function that let use state and lifecycle inside function components
+example useState, useEffect, useContext, useReducer, useRef, useMemo, useCallback, useLayoutEffect
+
 Props allow you to pass data, but what if a component needs to change its own data (like a counter or a typed input)? That's where **State** comes in.
+Props = data from parent → child (read-only).
+State = data inside a component (mutable with setState).
+
+updates are asynchronous 
+It communicates with backend via backend API
 
 We use the \`useState\` Hook. It gives us two things:
 1. The current value.
 2. A function to update that value.
 
 **Crucial:** NEVER modify state directly (e.g., \`count = count + 1\`). Always use the setter function (\`setCount(count + 1)\`), otherwise React won't know it needs to update the screen!
-    `,img : "/pic6.png"
+    `
   },
   {
     id: "state-lab",
