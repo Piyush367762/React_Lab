@@ -20,3 +20,12 @@ mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
+
+deployment instead of directly depolymnet use can use container and virtualization 
+to solve the problem of work on my machine 
+and different docker container can control using container orchertrastion
+
+different archi also available in backend like monolithic and microservices
+
+major apps using microservice so if one service go down other service remain independent from it
+it help in debugging rather than finding bug in  whole application
