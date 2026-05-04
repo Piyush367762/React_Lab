@@ -208,7 +208,7 @@ We use the \`useState\` Hook. It gives us two things:
 To turn an array of data into an array of UI elements, we use the JavaScript \`.map()\` array method.
 
 **The Key Prop:** Every item rendered inside a list must have a unique \`key\` prop (like an ID). React uses this to keep track of which items were added, changed, or removed.
-    `,img : "/pic7.png"
+    `
   },
   {
     id: "lists-lab",
