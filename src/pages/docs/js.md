@@ -214,21 +214,12 @@ const newPara1=document.createElement("p");
 newPara1.textcontent="First paragraph";
 
 parent.appendChild(newPara1);
-
-
-
-
 removeChild(node)
 replaceChild(newNode,oldNode)
 
 6) Event Attributes
 onclick, onchange, onmouseover
 addEventListener(event,handler)
-
-
-
-
-
 Updating UI dynamically
 
 Handling user interactions
@@ -236,3 +227,8 @@ Handling user interactions
 Creating animations
 
 Building interactive web apps
+
+document.querySelector("#title").textContent="hello";
+
+const [title,setTitle]=useState("Hello");
+setTitle("NewHello");
